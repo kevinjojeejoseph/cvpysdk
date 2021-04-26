@@ -2051,7 +2051,8 @@ class Backupset(object):
         else:
             options = kwargs
 
-        options['operation'] = 'find'
+        if 'operation' not in options:
+            options['operation'] = 'find'
 
         if 'path' not in options:
             options['path'] = '\\**\\*'
